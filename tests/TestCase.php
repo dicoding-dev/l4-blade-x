@@ -11,9 +11,22 @@ use Spatie\BladeX\BladeXServiceProvider;
 use Spatie\BladeX\Facades\BladeX;
 use Spatie\BladeX\Tests\SnapshotAssertions\MatchesSnapshots;
 
-abstract class TestCase extends \anlutro\LaravelTesting\PkgAppTestCase
+abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase
 {
     use MatchesSnapshots;
+
+    // ponytail: inlined from anlutro/l4-testing PkgAppTestCase (only the <5.0 branch we use)
+    public function createApplication(): Application
+    {
+        $unitTesting = true;
+        $testEnvironment = 'testing';
+
+        $app = new Application();
+        $app->bindInstallPaths(require $this->getVendorPath() . '/laravel/laravel/bootstrap/paths.php');
+        require Application::getBootstrapFile();
+
+        return $app;
+    }
 
     protected function setUp(): void
     {

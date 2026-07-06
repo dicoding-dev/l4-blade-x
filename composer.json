@@ -48,7 +48,6 @@
     "symfony/filesystem": "^6.4"
   },
   "require-dev": {
-    "anlutro/l4-testing": "dev-master",
     "laravel/laravel": "dev-master",
     "phpunit/phpunit": "^9.5"
   },
@@ -96,10 +95,6 @@
     {
       "type": "vcs",
       "url": "https://github.com/dicoding-dev/L42x-app"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/dicoding-dev/laravel-testing"
     }
   ]
 }
