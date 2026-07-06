@@ -1,92 +1,105 @@
 {
-    "name": "spatie/laravel-blade-x",
-    "description": "Supercharged Blade components",
-    "keywords": [
-        "spatie",
-        "blade",
-        "components",
-        "html",
-        "laravel-blade-x"
+  "name": "spatie/laravel-blade-x",
+  "description": "Supercharged Blade components",
+  "keywords": [
+    "spatie",
+    "blade",
+    "components",
+    "html",
+    "laravel-blade-x"
+  ],
+  "homepage": "https://github.com/spatie/laravel-blade-x",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sebastian De Deyne",
+      "email": "sebastian@spatie.be",
+      "homepage": "https://spatie.be",
+      "role": "Developer"
+    },
+    {
+      "name": "Brent Roose",
+      "email": "brent@spatie.be",
+      "homepage": "https://spatie.be",
+      "role": "Developer"
+    },
+    {
+      "name": "Ruben Van Assche",
+      "email": "ruben@spatie.be",
+      "homepage": "https://spatie.be",
+      "role": "Developer"
+    },
+    {
+      "name": "Freek Van der Herten",
+      "email": "freek@spatie.be",
+      "homepage": "https://spatie.be",
+      "role": "Developer"
+    },
+    {
+      "name": "Alex Vanderbist",
+      "email": "alex@spatie.be",
+      "homepage": "https://spatie.be",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2|^8.1",
+    "laravel/framework": ">=4.1,<4.3",
+    "symfony/filesystem": "^6.4"
+  },
+  "require-dev": {
+    "anlutro/l4-testing": "dev-master",
+    "laravel/laravel": "dev-master",
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "files": [
+      "src/Laravel/helpers.php"
     ],
-    "homepage": "https://github.com/spatie/laravel-blade-x",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Sebastian De Deyne",
-            "email": "sebastian@spatie.be",
-            "homepage": "https://spatie.be",
-            "role": "Developer"
-        },
-        {
-            "name": "Brent Roose",
-            "email": "brent@spatie.be",
-            "homepage": "https://spatie.be",
-            "role": "Developer"
-        },
-        {
-            "name": "Ruben Van Assche",
-            "email": "ruben@spatie.be",
-            "homepage": "https://spatie.be",
-            "role": "Developer"
-        },
-        {
-            "name": "Freek Van der Herten",
-            "email": "freek@spatie.be",
-            "homepage": "https://spatie.be",
-            "role": "Developer"
-        },
-        {
-            "name": "Alex Vanderbist",
-            "email": "alex@spatie.be",
-            "homepage": "https://spatie.be",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^7.2|^8.1",
-        "laravel/framework": ">=4.1,<4.3",
-        "symfony/filesystem": "^6.4"
+    "psr-4": {
+      "Spatie\\BladeX\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Spatie\\BladeX\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "kylekatarnls/update-helper": true
     },
-    "require-dev": {
-        "anlutro/l4-testing": "dev-master",
-        "laravel/laravel": "dev-master",
-        "phpunit/phpunit": "^9.5"
+    "audit": {
+      "ignore": {
+        "PKSA-8qx3-n5y5-vvnd": "nested array validation with wildcard is not supported in laravel 4.2",
+        "PKSA-w7xr-vk7n-rstm": "affected only when register_argc_argv is 'on' in php.ini",
+        "PKSA-3qhw-gzjt-j63j": "affected only laravel 5.5.40 and 5.6.x through 5.6.29",
+        "PKSA-17kp-jm2n-vxzz": "there is no link() function in Laravel 4.2 Filesystem/Filesystem.php",
+        "PKSA-7ywf-hktb-jkn9": "JSON nested attribute handling not implemented in 4.2, JSON columns is treated as string in 4.2",
+        "PKSA-njrm-6dtg-m2pc": "this is only affected newer blade engine such as laravel >5.x because it use hashed parent placeholder and inserted into raw HTML",
+        "PKSA-nrj3-r2wg-yt8b": "this is only affected when we use 'cookie' driver in session ",
+        "PKSA-m5cs-t1y6-qpcs": "update or not update still vulnerable, because affected to < 12.61.1",
+        "PKSA-3r5d-mb8f-1qw9": "update or not update still vulnerable, because affected to < 12.60.0"
+      }
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/dicoding-dev/L42x"
     },
-    "autoload": {
-        "files": [
-            "src/Laravel/helpers.php"
-        ],
-        "psr-4": {
-            "Spatie\\BladeX\\": "src"
-        }
+    {
+      "type": "vcs",
+      "url": "https://github.com/dicoding-dev/L42x-app"
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Spatie\\BladeX\\Tests\\": "tests"
-        }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "kylekatarnls/update-helper": true
-        }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/dicoding-dev/L42x"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/dicoding-dev/L42x-app"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/dicoding-dev/laravel-testing"
-        }
-    ]
+    {
+      "type": "vcs",
+      "url": "https://github.com/dicoding-dev/laravel-testing"
+    }
+  ]
 }
