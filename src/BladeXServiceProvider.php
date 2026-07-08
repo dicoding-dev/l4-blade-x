@@ -7,6 +7,7 @@ use Illuminate\View\ViewServiceProvider;
 
 class BladeXServiceProvider extends ViewServiceProvider
 {
+    #[\Override]
     public function register()
     {
         parent::register();
@@ -19,6 +20,7 @@ class BladeXServiceProvider extends ViewServiceProvider
         $this->registerBladeXCompiler();
     }
 
+    #[\Override]
     public function registerFactory()
     {
         $this->app->bindShared('view', function($app) {
@@ -35,6 +37,7 @@ class BladeXServiceProvider extends ViewServiceProvider
         });
     }
 
+    #[\Override]
     public function registerBladeEngine($resolver)
     {
 		$this->app->bindShared('blade.compiler', function($app)

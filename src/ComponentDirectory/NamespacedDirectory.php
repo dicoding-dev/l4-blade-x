@@ -32,6 +32,7 @@ class NamespacedDirectory extends ComponentDirectory
         return $viewPath ? "{$absoluteDirectory}/{$viewPath}" : $absoluteDirectory;
     }
 
+    #[\Override]
     public function getViewName(SplFileInfo $viewFile): string
     {
         return "{$this->namespace}::".parent::getViewName($viewFile);

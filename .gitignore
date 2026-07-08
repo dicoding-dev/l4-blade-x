@@ -4,3 +4,8 @@ composer.lock
 vendor
 coverage
 .phpunit.result.cache
+
+#nix dev env
+.envrc
+.devenv
+.direnv
