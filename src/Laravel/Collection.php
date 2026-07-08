@@ -7,7 +7,8 @@ use Illuminate\Support\Collection as L4Collection;
 
 class Collection extends L4Collection
 {
-    public function filter(Closure $callback = null)
+    #[\Override]
+    public function filter(?Closure $callback = null)
     {
         if ($callback) {
             // return new static(Arr::where($this->items, $callback));
@@ -17,6 +18,7 @@ class Collection extends L4Collection
         return new static(array_filter($this->items));
     }
 
+    #[\Override]
     public function implode($value, $glue = null)
     {
         $first = $this->first();
@@ -28,6 +30,7 @@ class Collection extends L4Collection
         return implode($value, $this->items);
     }
 
+    #[\Override]
     public function mapWithKeys(callable $callback)
     {
         $result = [];
@@ -48,6 +51,7 @@ class Collection extends L4Collection
         return new static(array_pluck($this->items, $value, $key));
     }
 
+    #[\Override]
     public function unique($key = null, $strict = false)
     {
         $callback = $this->valueRetriever($key);
@@ -63,6 +67,7 @@ class Collection extends L4Collection
         });
     }
 
+    #[\Override]
     public function reject($callback)
 	{
         $useAsCallable = $this->useAsCallable($callback);
@@ -74,11 +79,13 @@ class Collection extends L4Collection
         });
     }
 
+    #[\Override]
     protected function useAsCallable($value)
     {
         return ! is_string($value) && is_callable($value);
     }
 
+    #[\Override]
     protected function valueRetriever($value)
     {
         if ($this->useAsCallable($value)) {

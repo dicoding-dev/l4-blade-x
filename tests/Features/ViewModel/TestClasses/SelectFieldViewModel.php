@@ -19,7 +19,7 @@ class SelectFieldViewModel extends ViewModel
      * @todo $name and $options should not have default value
      * need to revert back after solving the test problem
      */
-    public function __construct(string $name = '', array $options = [], string $selected = null)
+    public function __construct(string $name = '', array $options = [], ?string $selected = null)
     {
         $this->name = $name;
 

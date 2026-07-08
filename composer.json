@@ -49,7 +49,8 @@
   },
   "require-dev": {
     "laravel/laravel": "dev-master",
-    "phpunit/phpunit": "^9.5"
+    "phpunit/phpunit": "^9.5",
+    "rector/rector": "^2.5"
   },
   "autoload": {
     "files": [

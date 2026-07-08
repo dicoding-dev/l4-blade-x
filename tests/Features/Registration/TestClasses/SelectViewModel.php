@@ -15,7 +15,7 @@ class SelectViewModel extends ViewModel
     /** @var string */
     private $selected;
 
-    public function __construct(string $name, array $options, string $selected = null)
+    public function __construct(string $name, array $options, ?string $selected = null)
     {
         $this->name = $name;
 
