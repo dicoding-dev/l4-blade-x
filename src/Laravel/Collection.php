@@ -2,13 +2,12 @@
 
 namespace Spatie\BladeX\Laravel;
 
-use \Closure;
 use Illuminate\Support\Collection as L4Collection;
 
 class Collection extends L4Collection
 {
     #[\Override]
-    public function filter(?Closure $callback = null)
+    public function filter($callback = null)
     {
         if ($callback) {
             // return new static(Arr::where($this->items, $callback));
@@ -68,7 +67,7 @@ class Collection extends L4Collection
     }
 
     #[\Override]
-    public function reject($callback)
+    public function reject($callback = true)
 	{
         $useAsCallable = $this->useAsCallable($callback);
 
